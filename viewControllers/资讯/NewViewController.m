@@ -42,8 +42,27 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBar.hidden=NO;
-    self.navigationController.navigationBar.tintColor=VBlue_color;
     self.tabBarController.tabBar.hidden=NO;
+   
+   //细节1:混合色
+   //细节2: 只有设置为透明后才会出现
+   self.navigationController.navigationBar.backgroundColor=VBlue_color;
+   
+   //细节: 设置透明后视图会上移
+
+//   [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]setTintColor:[UIColor whiteColor]];
+   [self.navigationController.navigationBar setTranslucent:YES];
+   [self.navigationController.navigationBar setBarTintColor:VBlue_color];
+   [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+   
+   
+   //navigationbar背景颜色
+  // self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+   //设置naviagtionbar的返回按钮颜色
+   self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+   [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+   
+   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,7 +73,7 @@
    [self createNavagtion];
    [self initData];
    [self createTableView];
-   [self  createSeachView];
+   //[self  createSeachView];
    //[self createMenu];
    
 
@@ -78,7 +97,7 @@
    segment.frame = CGRectMake(kDeviceWidth/4, 0, kDeviceWidth/2, 28);
    segment.selectedSegmentIndex = 0;
    segment.backgroundColor = [UIColor clearColor];
-   segment.tintColor =VBlue_color;
+   segment.tintColor =[UIColor whiteColor];
    
    NSDictionary* selectedTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:14]
                                             };
@@ -198,12 +217,12 @@
    
    
 }
--(void)circularMenuClickedButtonAtIndex:(int)buttonIndex
-{
-   NSLog(@"======%d",buttonIndex);
-   
-}
-
+//-(void)circularMenuClickedButtonAtIndex:(int)buttonIndex
+//{
+//   NSLog(@"======%d",buttonIndex);
+//   
+//}
+//
 //
 //-(void)dealmenuClick
 //{
@@ -531,6 +550,9 @@
    newVc.pageType=NSDetailPageTypeNewListController;
    newVc.detailId=model.Id;
    newVc.detailName=model.title;
+   UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil];
+   self.navigationItem.backBarButtonItem = backItem;
+
    [self.navigationController pushViewController:newVc animated:YES];
    
 }

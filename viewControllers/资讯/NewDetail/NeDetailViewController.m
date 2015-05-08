@@ -40,8 +40,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    self.navigationController.navigationBar.backgroundColor=VBlue_color;
+    [self.navigationController.navigationBar setTranslucent:YES];
+    [self.navigationController.navigationBar setBarTintColor:VBlue_color];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     self.tabBarController.tabBar.hidden=YES;
-    self.navigationController.toolbarHidden=NO;
+   // self.navigationController.toolbarHidden=NO;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -129,10 +133,6 @@
 }
 -(void)requestNewDetail
 {
-//    BOOL autodismiss = YES;
-
-    //[MMProgressHUD setDisplayStyle:MMProgressHUDDisplayStylePlain];
-    //[MMProgressHUD showWithTitle:nil status:@"Loading..."];
    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSString *urlString;
@@ -154,12 +154,6 @@
               [self.model setValuesForKeysWithDictionary:[responseObject objectForKey:@"yi18"]];
           }
           [self creatUI];
-//           double delayInSeconds = 0.0;
-//          dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-//          dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//              [MMProgressHUD dismissWithSuccess:@"Success!"];
-//          });
-
 
       }
    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

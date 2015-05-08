@@ -37,6 +37,11 @@
 
 @property(nonatomic,strong) NSString *loreclass;  //知识分类id
 
+
+@property(nonatomic,strong)NSString  *food;     // 食物名
+@property(nonatomic,strong)NSString  *name;  //食物名
+
+
  
 
 

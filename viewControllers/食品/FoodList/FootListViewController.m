@@ -1,21 +1,21 @@
 //
-//  KnoleViewController.m
+//  FootListViewController.m
 //  测试使用侧边栏
 //
-//  Created by 风之翼 on 15/5/4.
+//  Created by 风之翼 on 15/5/8.
 //  Copyright (c) 2015年 风之翼. All rights reserved.
 //
 
-#import "KnoleViewController.h"
+#import "FootListViewController.h"
 #import "ZCControl.h"
 #import "Const.h"
-#import "NetApi.h"
-#import "MJRefresh.h"
+#import "FoodListTableViewCell.h"
 #import "AFNetworking.h"
+#import  "MJRefresh.h"
+#import "NetApi.h"
 #import "newModel.h"
-#import "NewTableViewCell.h"
-#import "NeDetailViewController.h"
-@interface KnoleViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "FoodDetailViewController.h"
+@interface FootListViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     int page;
     int pagesize;
@@ -23,53 +23,34 @@
 }
 @property(nonatomic,strong) UITableView  *tableView;
 @property(nonatomic,strong)NSMutableArray  *dataArray;
+
 @end
 
-@implementation KnoleViewController
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-//    self.navigationController.navigationBar.tintColor=VBlue_color;
-    self.tabBarController.tabBar.hidden=NO;
-    self.navigationController.navigationBar.hidden=NO;
-     //细节1:混合色
-    //细节2: 只有设置为透明后才会出现
-    self.navigationController.navigationBar.backgroundColor=VBlue_color;
-    //细节: 设置透明后视图会上移
-    [self.navigationController.navigationBar setTranslucent:YES];
-    [self.navigationController.navigationBar setBarTintColor:VBlue_color];
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    
+@implementation FootListViewController
 
-
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor =[UIColor yellowColor];
-    [self createNavigation];
+    
+    [self createNavagtion];
     [self initData];
     [self createTableView];
-    [self requestList];
-    
+
 }
--(void)createNavigation
+
+-(void)createNavagtion
 {
-    
-        UILabel  *titleLable=[ZCControl createLabelWithFrame:CGRectMake(0, 0, 100, 20) Font:16 Text:@"健康常识"];
+        UILabel  *titleLable=[ZCControl createLabelWithFrame:CGRectMake(0, 0, 100, 20) Font:16 Text:[NSString stringWithFormat:@"健康食谱"]];
         titleLable.textColor=[UIColor whiteColor];
-        titleLable.font=[UIFont boldSystemFontOfSize:18];
+        titleLable.font=[UIFont boldSystemFontOfSize:16];
         titleLable.textAlignment=NSTextAlignmentCenter;
         self.navigationItem.titleView=titleLable;
-
 }
-
 -(void)initData{
-    page=1;
-    pagesize=20;
     self.dataArray = [[NSMutableArray alloc]init];
+     page=1;
+    pagesize=20;
+    
 }
 -(void)createTableView
 {
@@ -153,10 +134,12 @@
     //   for (int i = 0; i<5; i++) {
     //      [self.dataArray insertObject:MJRandomData atIndex:0];
     //   }
+    
          if (self.dataArray.count>0) {
             [self.dataArray removeAllObjects];
         }
-        page=1;
+  
+    page=1;
     [self requestList];
     // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -185,20 +168,21 @@
         [self.tableView.footer endRefreshing];
     });
 }
+
+
 -(void)requestList
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *urlString;
          //全部
-        urlString =[NSString stringWithFormat:@"%@?limit=%d&page=%d",ApiKnoleList,pagesize,page];
-        
-     [manager POST:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        
+        urlString =[NSString stringWithFormat:@"%@?id=%@&limit=%d&page=%d",ApiFoodList,self.category_id,pagesize,page];
+    
+    [manager POST:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([[responseObject objectForKey:@"success"] boolValue]==YES) {
             if ([responseObject objectForKey:@"yi18"])
             {
                 NSMutableArray  *array =   [responseObject objectForKey:@"yi18"];
+                NSLog(@"array====%@",array);
                      for (NSDictionary  *dict in array) {
                         newModel *model =[[newModel alloc]init];
                         if (model) {
@@ -210,61 +194,49 @@
                         }
                     }
                 }
-            
-            
             [self.tableView reloadData];
-        }
+            }
+            
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+    
+    
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-         return self.dataArray.count;
-   
- }
+    return self.dataArray.count;
+
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-       newModel  *model;
-         if (self.dataArray.count>indexPath.row) {
-            model =[self.dataArray objectAtIndex:indexPath.row];
-        }
-    
-     NSString  *imageString =model.img;
-    if (imageString.length==0||!imageString) {
-        return 60;
-    }
-    return 80;
+        return 80;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
         static NSString  *cellID=@"cell1";
-        NewTableViewCell  *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
+        FoodListTableViewCell  *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
         if (!cell) {
-            cell =[[NewTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+            cell =[[FoodListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         }
         if (self.dataArray.count>indexPath.row) {
             cell.model =[self.dataArray objectAtIndex:indexPath.row];
-            cell.pageType=NSPageTypeKnoleController;
+            [cell setCellValueForRowIndex:indexPath.row];
+
         }
-        // cell.textLabel.text=@"资讯";
-        [cell setCellValueforRowIndex:indexPath.row];
         return cell;
-    
- }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NeDetailViewController *newVc=[[NeDetailViewController alloc]init];
-    newModel  *model;
-    newVc.pageType=NSDetailPageTypeKnoleController;
-    model =[self.dataArray objectAtIndex:indexPath.row];
-    newVc.detailId=model.Id;
-    newVc.detailName=model.title;
-    [self.navigationController pushViewController:newVc animated:YES];
-    
+    FoodDetailViewController  *de= [[FoodDetailViewController alloc]init];
+  newModel  *model=  [self.dataArray objectAtIndex:indexPath.row];
+    de.food_id=model.Id;
+    de.food_name=model.name;
+    [self.navigationController pushViewController:de animated:YES];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
