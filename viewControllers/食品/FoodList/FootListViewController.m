@@ -42,7 +42,7 @@
 {
         UILabel  *titleLable=[ZCControl createLabelWithFrame:CGRectMake(0, 0, 100, 20) Font:16 Text:[NSString stringWithFormat:@"健康食谱"]];
         titleLable.textColor=[UIColor whiteColor];
-        titleLable.font=[UIFont boldSystemFontOfSize:16];
+        titleLable.font=[UIFont boldSystemFontOfSize:18];
         titleLable.textAlignment=NSTextAlignmentCenter;
         self.navigationItem.titleView=titleLable;
 }
