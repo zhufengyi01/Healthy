@@ -54,7 +54,6 @@
 		0034A67D1AF782BE003BF7E8 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034A67C1AF782BE003BF7E8 /* NewViewController.m */; };
 		0034A6821AF78AA0003BF7E8 /* KnoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034A6811AF78AA0003BF7E8 /* KnoleViewController.m */; };
 		0034A6851AF78B2B003BF7E8 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034A6841AF78B2B003BF7E8 /* FoodViewController.m */; };
-		0034A6881AF78F4E003BF7E8 /* NewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034A6871AF78F4E003BF7E8 /* NewTableViewCell.m */; };
 		003BE5661AF677EE00BBD229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE5651AF677EE00BBD229 /* main.m */; };
 		003BE5691AF677EE00BBD229 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE5681AF677EE00BBD229 /* AppDelegate.m */; };
 		003BE56C1AF677EE00BBD229 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE56B1AF677EE00BBD229 /* ViewController.m */; };
@@ -102,6 +101,7 @@
 		00A5FF5E1AF8B6EC0055CCDA /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5FF501AF8B6EC0055CCDA /* UIScrollView+MJExtension.m */; };
 		00A5FF5F1AF8B6EC0055CCDA /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5FF521AF8B6EC0055CCDA /* UIScrollView+MJRefresh.m */; };
 		00A5FF601AF8B6EC0055CCDA /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5FF541AF8B6EC0055CCDA /* UIView+MJExtension.m */; };
+		00D20DF21B21CF2600E88004 /* NewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D20DF11B21CF2600E88004 /* NewTableViewCell.m */; };
 		00F4F77D1AF7BE3B0090492D /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4F77C1AF7BE3B0090492D /* ADCircularMenuViewController.m */; };
 		00F4F7A21AF7C0DD0090492D /* cell_background_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F4F77F1AF7C0DD0090492D /* cell_background_color.png */; };
 		00F4F7A31AF7C0DD0090492D /* feed_tab_butten_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F4F7801AF7C0DD0090492D /* feed_tab_butten_normal.png */; };
@@ -244,8 +244,6 @@
 		0034A6811AF78AA0003BF7E8 /* KnoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnoleViewController.m; sourceTree = "<group>"; };
 		0034A6831AF78B2B003BF7E8 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
 		0034A6841AF78B2B003BF7E8 /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
-		0034A6861AF78F4E003BF7E8 /* NewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTableViewCell.h; path = "../../viewControllers/资讯/NewTableViewCell.h"; sourceTree = "<group>"; };
-		0034A6871AF78F4E003BF7E8 /* NewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTableViewCell.m; path = "../../viewControllers/资讯/NewTableViewCell.m"; sourceTree = "<group>"; };
 		0034A6891AF78FE5003BF7E8 /* NetApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetApi.h; sourceTree = "<group>"; };
 		003BE5601AF677EE00BBD229 /* 测试使用侧边栏.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "测试使用侧边栏.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		003BE5641AF677EE00BBD229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -341,6 +339,8 @@
 		00A5FF521AF8B6EC0055CCDA /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		00A5FF531AF8B6EC0055CCDA /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		00A5FF541AF8B6EC0055CCDA /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		00D20DF01B21CF2600E88004 /* NewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTableViewCell.h; sourceTree = "<group>"; };
+		00D20DF11B21CF2600E88004 /* NewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTableViewCell.m; sourceTree = "<group>"; };
 		00F4F77B1AF7BE3B0090492D /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
 		00F4F77C1AF7BE3B0090492D /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
 		00F4F77F1AF7C0DD0090492D /* cell_background_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_background_color.png; sourceTree = "<group>"; };
@@ -794,8 +794,8 @@
 		004721B51AFA285800CC75FD /* AppCell */ = {
 			isa = PBXGroup;
 			children = (
-				0034A6861AF78F4E003BF7E8 /* NewTableViewCell.h */,
-				0034A6871AF78F4E003BF7E8 /* NewTableViewCell.m */,
+				00D20DF01B21CF2600E88004 /* NewTableViewCell.h */,
+				00D20DF11B21CF2600E88004 /* NewTableViewCell.m */,
 			);
 			path = AppCell;
 			sourceTree = "<group>";
@@ -1070,6 +1070,7 @@
 				0034A5431AF742EB003BF7E8 /* UIButton+WebCache.m in Sources */,
 				0034A52E1AF742EB003BF7E8 /* AFURLConnectionOperation.m in Sources */,
 				004721A61AFA1D8700CC75FD /* MMProgressHUD+Class.m in Sources */,
+				00D20DF21B21CF2600E88004 /* NewTableViewCell.m in Sources */,
 				003BE59F1AF67FBA00BBD229 /* SecondViewController.m in Sources */,
 				0034A5331AF742EB003BF7E8 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				004721AB1AFA1D8700CC75FD /* MMRadialProgressView.m in Sources */,
@@ -1102,7 +1103,6 @@
 				003BE5961AF6781700BBD229 /* UIViewController+MMDrawerController.m in Sources */,
 				0034A53F1AF742EB003BF7E8 /* SDWebImageDownloader.m in Sources */,
 				0034A52D1AF742EB003BF7E8 /* AFSecurityPolicy.m in Sources */,
-				0034A6881AF78F4E003BF7E8 /* NewTableViewCell.m in Sources */,
 				0034A6851AF78B2B003BF7E8 /* FoodViewController.m in Sources */,
 				004721A41AFA1D8700CC75FD /* MMLinearProgressView.m in Sources */,
 				00A5FF5E1AF8B6EC0055CCDA /* UIScrollView+MJExtension.m in Sources */,
