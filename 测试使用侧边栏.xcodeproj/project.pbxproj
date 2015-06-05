@@ -65,7 +65,6 @@
 		003BE5941AF6781700BBD229 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE58E1AF6781700BBD229 /* MMDrawerController.m */; };
 		003BE5951AF6781700BBD229 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE5901AF6781700BBD229 /* MMDrawerVisualState.m */; };
 		003BE5961AF6781700BBD229 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE5921AF6781700BBD229 /* UIViewController+MMDrawerController.m */; };
-		003BE5991AF6785F00BBD229 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE5981AF6785F00BBD229 /* LeftViewController.m */; };
 		003BE59F1AF67FBA00BBD229 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003BE59E1AF67FBA00BBD229 /* SecondViewController.m */; };
 		004721851AF9E07800CC75FD /* M80AttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0047217D1AF9E07800CC75FD /* M80AttributedLabel.m */; };
 		004721861AF9E07800CC75FD /* M80AttributedLabelAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0047217F1AF9E07800CC75FD /* M80AttributedLabelAttachment.m */; };
@@ -87,6 +86,7 @@
 		0060ABC81AFD104F0037B02F /* FootListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060ABC71AFD104F0037B02F /* FootListViewController.m */; };
 		0060ABCC1AFD11A70037B02F /* FoodListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060ABCB1AFD11A70037B02F /* FoodListTableViewCell.m */; };
 		0060ABD01AFD21850037B02F /* FoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060ABCF1AFD21850037B02F /* FoodDetailViewController.m */; };
+		00781D231B21EEF200A20362 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00781D221B21EEF200A20362 /* LeftViewController.m */; };
 		00A5FF361AF89DF50055CCDA /* NeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5FF351AF89DF50055CCDA /* NeDetailViewController.m */; };
 		00A5FF391AF8A1DF0055CCDA /* RoorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5FF381AF8A1DF0055CCDA /* RoorViewController.m */; };
 		00A5FF551AF8B6EC0055CCDA /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00A5FF3D1AF8B6EC0055CCDA /* MJRefresh.bundle */; };
@@ -267,8 +267,6 @@
 		003BE5901AF6781700BBD229 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		003BE5911AF6781700BBD229 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		003BE5921AF6781700BBD229 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
-		003BE5971AF6785F00BBD229 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftViewController.h; path = "../../测试使用侧边栏/LeftViewController.h"; sourceTree = "<group>"; };
-		003BE5981AF6785F00BBD229 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftViewController.m; path = "../../测试使用侧边栏/LeftViewController.m"; sourceTree = "<group>"; };
 		003BE59D1AF67FBA00BBD229 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		003BE59E1AF67FBA00BBD229 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		0047217C1AF9E07800CC75FD /* M80AttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M80AttributedLabel.h; sourceTree = "<group>"; };
@@ -311,6 +309,8 @@
 		0060ABCB1AFD11A70037B02F /* FoodListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodListTableViewCell.m; sourceTree = "<group>"; };
 		0060ABCE1AFD21850037B02F /* FoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailViewController.h; sourceTree = "<group>"; };
 		0060ABCF1AFD21850037B02F /* FoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailViewController.m; sourceTree = "<group>"; };
+		00781D211B21EEF200A20362 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		00781D221B21EEF200A20362 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		00A5FF341AF89DF50055CCDA /* NeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeDetailViewController.h; sourceTree = "<group>"; };
 		00A5FF351AF89DF50055CCDA /* NeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeDetailViewController.m; sourceTree = "<group>"; };
 		00A5FF371AF8A1DF0055CCDA /* RoorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoorViewController.h; sourceTree = "<group>"; };
@@ -568,8 +568,8 @@
 		0034A54A1AF74344003BF7E8 /* 左视图 */ = {
 			isa = PBXGroup;
 			children = (
-				003BE5971AF6785F00BBD229 /* LeftViewController.h */,
-				003BE5981AF6785F00BBD229 /* LeftViewController.m */,
+				00781D211B21EEF200A20362 /* LeftViewController.h */,
+				00781D221B21EEF200A20362 /* LeftViewController.m */,
 			);
 			name = "左视图";
 			path = Left;
@@ -1089,7 +1089,6 @@
 				0034A5361AF742EB003BF7E8 /* UIImageView+AFNetworking.m in Sources */,
 				004721AA1AFA1D8700CC75FD /* MMProgressHUDWindow.m in Sources */,
 				0034A5391AF742EB003BF7E8 /* UIWebView+AFNetworking.m in Sources */,
-				003BE5991AF6785F00BBD229 /* LeftViewController.m in Sources */,
 				00A5FF5D1AF8B6EC0055CCDA /* MJRefreshLegendHeader.m in Sources */,
 				0034A53D1AF742EB003BF7E8 /* SDWebImageCompat.m in Sources */,
 				0047218C1AFA08F600CC75FD /* Helper.m in Sources */,
@@ -1146,6 +1145,7 @@
 				00A5FF391AF8A1DF0055CCDA /* RoorViewController.m in Sources */,
 				004721A81AFA1D8700CC75FD /* MMProgressHUDOverlayView.m in Sources */,
 				0034A5481AF742EB003BF7E8 /* UIImageView+WebCache.m in Sources */,
+				00781D231B21EEF200A20362 /* LeftViewController.m in Sources */,
 				003466BC1AF73C6A003BF7E8 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				004721861AF9E07800CC75FD /* M80AttributedLabelAttachment.m in Sources */,
 			);
