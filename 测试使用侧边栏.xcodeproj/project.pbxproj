@@ -152,8 +152,8 @@
 		3FB0FEB21B22F9AD00ED83B7 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0FEAE1B22F9AD00ED83B7 /* MBProgressHUD+MJ.m */; };
 		3FB0FEB31B22F9AD00ED83B7 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FB0FEAF1B22F9AD00ED83B7 /* MBProgressHUD.bundle */; };
 		3FB0FEB41B22F9AD00ED83B7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0FEB11B22F9AD00ED83B7 /* MBProgressHUD.m */; };
-		3FB0FEBE1B2310D000ED83B7 /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0FEBC1B2310D000ED83B7 /* AboutMeViewController.m */; };
-		3FB0FEBF1B2310D000ED83B7 /* AboutMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB0FEBD1B2310D000ED83B7 /* AboutMeViewController.xib */; };
+		3FB0FECA1B2325EC00ED83B7 /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0FEC81B2325EC00ED83B7 /* AboutMeViewController.m */; };
+		3FB0FECB1B2325EC00ED83B7 /* AboutMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB0FEC91B2325EC00ED83B7 /* AboutMeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -412,9 +412,9 @@
 		3FB0FEAF1B22F9AD00ED83B7 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		3FB0FEB01B22F9AD00ED83B7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		3FB0FEB11B22F9AD00ED83B7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		3FB0FEBB1B2310D000ED83B7 /* AboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutMeViewController.h; path = ../../../../../../../Documents/AboutMeViewController.h; sourceTree = "<group>"; };
-		3FB0FEBC1B2310D000ED83B7 /* AboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutMeViewController.m; path = ../../../../../../../Documents/AboutMeViewController.m; sourceTree = "<group>"; };
-		3FB0FEBD1B2310D000ED83B7 /* AboutMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutMeViewController.xib; path = ../../../../../../../Documents/AboutMeViewController.xib; sourceTree = "<group>"; };
+		3FB0FEC71B2325EC00ED83B7 /* AboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeViewController.h; sourceTree = "<group>"; };
+		3FB0FEC81B2325EC00ED83B7 /* AboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeViewController.m; sourceTree = "<group>"; };
+		3FB0FEC91B2325EC00ED83B7 /* AboutMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMeViewController.xib; sourceTree = "<group>"; };
 		5FF15C55B170F79F49FEA0CA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A0E7405415A0C5202EEEE94A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C525401536AE0DA835DEF9C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -489,7 +489,7 @@
 		003466C91AF7418C003BF7E8 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3FB0FEB51B230DAE00ED83B7 /* 关于我们 */,
+				3FB0FEC61B2325EC00ED83B7 /* 关于我们 */,
 				3FB0FE981B22EF0300ED83B7 /* 自定义控制器 */,
 				3F094CFD1B22EE1A0037D3F4 /* 更多 */,
 				00781D241B21F78A00A20362 /* 左视图 */,
@@ -1018,12 +1018,12 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		3FB0FEB51B230DAE00ED83B7 /* 关于我们 */ = {
+		3FB0FEC61B2325EC00ED83B7 /* 关于我们 */ = {
 			isa = PBXGroup;
 			children = (
-				3FB0FEBB1B2310D000ED83B7 /* AboutMeViewController.h */,
-				3FB0FEBC1B2310D000ED83B7 /* AboutMeViewController.m */,
-				3FB0FEBD1B2310D000ED83B7 /* AboutMeViewController.xib */,
+				3FB0FEC71B2325EC00ED83B7 /* AboutMeViewController.h */,
+				3FB0FEC81B2325EC00ED83B7 /* AboutMeViewController.m */,
+				3FB0FEC91B2325EC00ED83B7 /* AboutMeViewController.xib */,
 			);
 			path = "关于我们";
 			sourceTree = "<group>";
@@ -1148,7 +1148,7 @@
 				00F4F7AF1AF7C0DD0090492D /* movie_tab_butten_normal.png in Resources */,
 				00F4F7BF1AF7C0DD0090492D /* opened_share_icon@2x.png in Resources */,
 				00F4F7B71AF7C0DD0090492D /* notice_tab_butten_normal@3x.png in Resources */,
-				3FB0FEBF1B2310D000ED83B7 /* AboutMeViewController.xib in Resources */,
+				3FB0FECB1B2325EC00ED83B7 /* AboutMeViewController.xib in Resources */,
 				00F4F7A21AF7C0DD0090492D /* cell_background_color.png in Resources */,
 				3FB0FEA91B22F3D500ED83B7 /* navigationbar_more_disable@3x.png in Resources */,
 				00A5FF551AF8B6EC0055CCDA /* MJRefresh.bundle in Resources */,
@@ -1288,7 +1288,7 @@
 				0034A52A1AF742EB003BF7E8 /* AFHTTPRequestOperationManager.m in Sources */,
 				0034A52F1AF742EB003BF7E8 /* AFURLRequestSerialization.m in Sources */,
 				00F4F7C81AF7C4CC0090492D /* newModel.m in Sources */,
-				3FB0FEBE1B2310D000ED83B7 /* AboutMeViewController.m in Sources */,
+				3FB0FECA1B2325EC00ED83B7 /* AboutMeViewController.m in Sources */,
 				0034A5491AF742EB003BF7E8 /* UIView+WebCacheOperation.m in Sources */,
 				00A5FF571AF8B6EC0055CCDA /* MJRefreshConst.m in Sources */,
 				0034A5421AF742EB003BF7E8 /* SDWebImagePrefetcher.m in Sources */,
