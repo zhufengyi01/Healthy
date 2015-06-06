@@ -140,6 +140,7 @@
 		00F4F7C41AF7C0DD0090492D /* unselect_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F4F7A11AF7C0DD0090492D /* unselect_icon@3x.png */; };
 		00F4F7C81AF7C4CC0090492D /* newModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4F7C71AF7C4CC0090492D /* newModel.m */; };
 		0D2F7C7E376E0E0F117A7241 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E7405415A0C5202EEEE94A /* libPods.a */; };
+		3F094D001B22EE290037D3F4 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F094CFF1B22EE290037D3F4 /* MoreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -381,6 +382,8 @@
 		00F4F7A11AF7C0DD0090492D /* unselect_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unselect_icon@3x.png"; sourceTree = "<group>"; };
 		00F4F7C61AF7C4CC0090492D /* newModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newModel.h; sourceTree = "<group>"; };
 		00F4F7C71AF7C4CC0090492D /* newModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newModel.m; sourceTree = "<group>"; };
+		3F094CFE1B22EE290037D3F4 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		3F094CFF1B22EE290037D3F4 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		5FF15C55B170F79F49FEA0CA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A0E7405415A0C5202EEEE94A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C525401536AE0DA835DEF9C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -454,6 +457,7 @@
 		003466C91AF7418C003BF7E8 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F094CFD1B22EE1A0037D3F4 /* 更多 */,
 				00781D241B21F78A00A20362 /* 左视图 */,
 				0034A6771AF74835003BF7E8 /* 我的 */,
 				0034A6221AF743B5003BF7E8 /* 食品 */,
@@ -934,6 +938,15 @@
 			path = NewDetail;
 			sourceTree = "<group>";
 		};
+		3F094CFD1B22EE1A0037D3F4 /* 更多 */ = {
+			isa = PBXGroup;
+			children = (
+				3F094CFE1B22EE290037D3F4 /* MoreViewController.h */,
+				3F094CFF1B22EE290037D3F4 /* MoreViewController.m */,
+			);
+			path = "更多";
+			sourceTree = "<group>";
+		};
 		8544BFEB7C84F49E5212E39F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1131,6 +1144,7 @@
 				00D20DF21B21CF2600E88004 /* NewTableViewCell.m in Sources */,
 				003BE59F1AF67FBA00BBD229 /* SecondViewController.m in Sources */,
 				0034A5331AF742EB003BF7E8 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				3F094D001B22EE290037D3F4 /* MoreViewController.m in Sources */,
 				004721AB1AFA1D8700CC75FD /* MMRadialProgressView.m in Sources */,
 				0034A5471AF742EB003BF7E8 /* UIImageView+HighlightedWebCache.m in Sources */,
 				00A5FF5F1AF8B6EC0055CCDA /* UIScrollView+MJRefresh.m in Sources */,
