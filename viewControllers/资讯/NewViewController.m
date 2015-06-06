@@ -12,18 +12,16 @@
 #import "NetApi.h"
 #import "AFNetworking.h"
 #import "newModel.h"
-#import "ADCircularMenuViewController.h"
 #import "NewTableViewCell.h"
 #import "NeDetailViewController.h"
 #import "MJRefresh.h"
-@interface NewViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,ADCircularMenuDelegate>
+@interface NewViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 {
     int page;
     int pagesize;
    int Id;
    UISegmentedControl *segment;
    UISearchBar  *search;
-   ADCircularMenuViewController *circularMenuVC;
    UIImageView  *seachView;
    UIButton *Searchbutton;
    UIButton  *Menubtn;
@@ -193,23 +191,6 @@
      pagesize=20;
      Id=1;
 }
-//-(void)createMenu
-//{
-//   
-//   Menubtn =[ZCControl createButtonWithFrame:CGRectMake(0,kDeviceHeight-kHeigthTabBar-kHeightNavigation, 40, 40) ImageName:nil Target:self Action:@selector(dealmenuClick) Title:@""];
-//   Menubtn.backgroundColor =[UIColor whiteColor];
-//   Menubtn.layer.cornerRadius=20;
-//   Menubtn.layer.borderColor=VBlue_color.CGColor;
-//   Menubtn.layer.borderWidth=3;
-//   Menubtn.clipsToBounds=YES;
-//   [Menubtn  setImage:[UIImage imageNamed:@"up_picture_blue"] forState:UIControlStateNormal];
-//   [self.view addSubview:Menubtn];
-//  
-//   
-//   //在标签上添加一个手势
-//   UIPanGestureRecognizer   *pan=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handelPan:)];
-//   [Menubtn addGestureRecognizer:pan];
-//}
 -(void)handelPan:(UIPanGestureRecognizer *) pan
 {
    CGPoint  point =[pan locationInView:self.view];
@@ -217,34 +198,11 @@
    
    
 }
-//-(void)circularMenuClickedButtonAtIndex:(int)buttonIndex
-//{
-//   NSLog(@"======%d",buttonIndex);
-//   
-//}
-//
-//
-//-(void)dealmenuClick
-//{
-//   NSArray *arrImageName = [[NSArray alloc] initWithObjects:@"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png", nil];
-//   
-//   circularMenuVC = [[ADCircularMenuViewController alloc] initWithMenuButtonImageNameArray:arrImageName andCornerButtonImageName:@"feed_tab_butten_press@2x.png"];
-//   circularMenuVC.delegateCircularMenu = self;
-//   [circularMenuVC show];
-//
-//}
-//
--(void)createTableView
+ -(void)createTableView
 {
     self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0,0,kDeviceWidth, kDeviceHeight-0)];
     self.tableView.delegate=self;
-    self.tableView.backgroundColor = View_BackGround;
+    self.tableView.backgroundColor =[UIColor whiteColor];
     self.tableView.dataSource=self;
     //self.myTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];

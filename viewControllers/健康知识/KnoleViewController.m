@@ -75,7 +75,7 @@
 {
     self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0,0,kDeviceWidth, kDeviceHeight-0)];
     self.tableView.delegate=self;
-    self.tableView.backgroundColor = View_BackGround;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.dataSource=self;
     //self.myTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];

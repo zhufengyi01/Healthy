@@ -159,7 +159,7 @@
     section.headerTitle = @"关于我们";
     __weak typeof (self) weakSelf = self;
     RETableViewItem *item = [RETableViewItem itemWithTitle:@"关于" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
-        AboutMeViewController *aboutVC = [[AboutMeViewController alloc] init];
+        AboutMeViewController *aboutVC = [[AboutMeViewController alloc] initWithNibName:@"AboutMeViewController" bundle:nil];
         [weakSelf.navigationController pushViewController:aboutVC animated:YES];
     }];
     [section addItem:item];
