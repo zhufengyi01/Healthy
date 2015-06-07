@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MMDrawerController.h"
-#import "LeftViewController.h"
 #import "MMDrawerVisualState.h"
 #import "NewViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"

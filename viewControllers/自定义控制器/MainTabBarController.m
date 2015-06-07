@@ -30,7 +30,7 @@
     [self addChildVc:newVC title:@"资讯" image:@"feed_tab_butten_normal.png" selectedImage:@"feed_tab_butten_press.png"];
     
     KnoleViewController *knoleVC = [[KnoleViewController alloc] init];
-    [self addChildVc:knoleVC title:@"常时" image:@"movie_tab_butten_normal.png" selectedImage:@"movie_tab_butten_press.png"];
+    [self addChildVc:knoleVC title:@"常识" image:@"movie_tab_butten_normal.png" selectedImage:@"movie_tab_butten_press.png"];
     
     // 添加药品控制器
     FoodViewController *foodVC = [[FoodViewController alloc] init];

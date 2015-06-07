@@ -30,18 +30,18 @@
 @implementation FoodViewController
 -(void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:YES];
-    self.tabBarController.tabBar.hidden=NO;
-    self.navigationController.navigationBar.hidden=NO;
-    //细节1:混合色
-    //细节2: 只有设置为透明后才会出现
-    self.navigationController.navigationBar.backgroundColor=VBlue_color;
-    //细节: 设置透明后视图会上移
-    [self.navigationController.navigationBar setTranslucent:YES];
-    [self.navigationController.navigationBar setBarTintColor:VBlue_color];
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+//    [super viewWillAppear:YES];
+//    self.tabBarController.tabBar.hidden=NO;
+//    self.navigationController.navigationBar.hidden=NO;
+//    //细节1:混合色
+//    //细节2: 只有设置为透明后才会出现
+//    self.navigationController.navigationBar.backgroundColor=VBlue_color;
+//    //细节: 设置透明后视图会上移
+//    [self.navigationController.navigationBar setTranslucent:YES];
+//    [self.navigationController.navigationBar setBarTintColor:VBlue_color];
+//    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
 
 

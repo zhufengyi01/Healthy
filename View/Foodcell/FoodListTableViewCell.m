@@ -30,17 +30,17 @@
 -(void)createUI
 {
    // self.nameLabel =[ZCControl createLabelWithFrame:CGRectMake(10, 0, kDeviceWidth-120, 40) Font:14 Text:@"haha"];
-    self.nameLabel =[[UILabel alloc]initWithFrame:CGRectMake(10,0, kDeviceWidth-120, 20)];
+    self.nameLabel =[[UILabel alloc]initWithFrame:CGRectMake(10,5, kDeviceWidth-120, 20)];
     self.nameLabel.font=[UIFont boldSystemFontOfSize:16];
     //self.nameLabel.textColor=VGray_color;
     [self.contentView addSubview:self.nameLabel];
 
-    foodLable =[ZCControl createLabelWithFrame:CGRectMake(10,20, kDeviceWidth-100, 20) Font:14 Text:@"yoyo"];
+    foodLable =[ZCControl createLabelWithFrame:CGRectMake(10,30, kDeviceWidth-100, 20) Font:14 Text:@"yoyo"];
     foodLable.font=[UIFont systemFontOfSize:14];
     foodLable.textColor=VGray_color;
     [self.contentView addSubview:foodLable];
     
-    tagLabel =[ZCControl createLabelWithFrame:CGRectMake(10,50, kDeviceWidth-100, 30) Font:14 Text:@"yoyo"];
+    tagLabel =[ZCControl createLabelWithFrame:CGRectMake(10,55, kDeviceWidth-100, 30) Font:14 Text:@"yoyo"];
     tagLabel.font=[UIFont systemFontOfSize:12];
     tagLabel.textColor=VGray_color;
     tagLabel.numberOfLines=2;
@@ -48,7 +48,7 @@
     tagLabel.lineBreakMode=NSLineBreakByTruncatingTail;
     [self.contentView addSubview:tagLabel];
     
-    logoImageView =[[UIImageView alloc]initWithFrame:CGRectMake(kDeviceWidth-85,10, 80, 60)];
+    logoImageView =[[UIImageView alloc]initWithFrame:CGRectMake(kDeviceWidth-85,15, 80, 60)];
     logoImageView.layer.cornerRadius=4;
     logoImageView.clipsToBounds=YES;
     [self.contentView addSubview:logoImageView];
@@ -59,7 +59,7 @@
 {
     self.nameLabel.text=self.model.name;
     foodLable.text=[NSString stringWithFormat:@"食材:%@",self.model.food];
-    tagLabel.text=[NSString stringWithFormat:@"标签:%@",self.model.tag];
+    tagLabel.text=[NSString stringWithFormat:@"%@",self.model.tag];
     NSString  *imageurl =[NSString stringWithFormat:@"%@%@",ApiBase,self.model.img];
     [logoImageView sd_setImageWithURL:[NSURL URLWithString:imageurl] placeholderImage:nil];
 

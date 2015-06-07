@@ -232,9 +232,9 @@
     
      NSString  *imageString =model.img;
     if (imageString.length==0||!imageString) {
-        return 60;
+        return 80;
     }
-    return 80;
+    return 100;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

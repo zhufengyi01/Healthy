@@ -30,7 +30,7 @@
 -(void)createUI
 {
     titleLable =[ZCControl createLabelWithFrame:CGRectMake(10, 0, kDeviceWidth-120, 40) Font:14 Text:@""];
-    titleLable.font=[UIFont boldSystemFontOfSize:14];
+    titleLable.font=[UIFont systemFontOfSize:16];
     [self.contentView addSubview:titleLable];
     
     tagLabel =[ZCControl createLabelWithFrame:CGRectMake(10,60, 40, 15) Font:10 Text:@""];
@@ -38,7 +38,7 @@
     tagLabel.layer.cornerRadius=2;
     tagLabel.clipsToBounds=YES;
     tagLabel.textColor=[UIColor whiteColor];
-    [self.contentView addSubview:tagLabel];
+  //  [self.contentView addSubview:tagLabel];
     
     countLabel =[ZCControl createLabelWithFrame:CGRectMake(70,60,80, 20) Font:12 Text:@""];
     countLabel.textColor=VGray_color;
@@ -85,7 +85,7 @@
     
     NSString  *titleStr =self.model.title;
     CGSize  size =[titleStr boundingRectWithSize:CGSizeMake(kDeviceWidth-100, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:[NSDictionary dictionaryWithObject:titleLable.font forKey:NSFontAttributeName] context:nil].size;
-    titleLable.frame=CGRectMake(10, 0, kDeviceWidth-100, size.height+5);
+    titleLable.frame=CGRectMake(10, 5, kDeviceWidth-100, size.height+5);
     
     countLabel.frame=CGRectMake(10, self.frame.size.height-20, 80, 20);
     tagLabel.frame=CGRectMake(10,self.frame.size.height-40, 40, 20);

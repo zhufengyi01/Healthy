@@ -40,12 +40,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    self.navigationController.navigationBar.backgroundColor=VBlue_color;
-    [self.navigationController.navigationBar setTranslucent:YES];
-    [self.navigationController.navigationBar setBarTintColor:VBlue_color];
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    self.tabBarController.tabBar.hidden=YES;
-   // self.navigationController.toolbarHidden=NO;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,7 +63,7 @@
 -(void)creatUI
 {
 
-    self.scrollView =[[UIScrollView alloc]initWithFrame:CGRectMake(0,64, kDeviceWidth, kDeviceHeight)];
+    self.scrollView =[[UIScrollView alloc]initWithFrame:CGRectMake(0,0, kDeviceWidth, kDeviceHeight)];
     self.scrollView.contentSize=CGSizeMake(kDeviceWidth, 2*kDeviceHeight);
     //self.scrollView.backgroundColor =[UIColor redColor];
     self.scrollView.backgroundColor=View_BackGround;

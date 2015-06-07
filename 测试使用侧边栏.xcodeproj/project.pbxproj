@@ -84,7 +84,6 @@
 		0060ABC81AFD104F0037B02F /* FootListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060ABC71AFD104F0037B02F /* FootListViewController.m */; };
 		0060ABCC1AFD11A70037B02F /* FoodListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060ABCB1AFD11A70037B02F /* FoodListTableViewCell.m */; };
 		0060ABD01AFD21850037B02F /* FoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060ABCF1AFD21850037B02F /* FoodDetailViewController.m */; };
-		00781D271B21F78A00A20362 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00781D261B21F78A00A20362 /* LeftViewController.m */; };
 		00A5FF361AF89DF50055CCDA /* NeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5FF351AF89DF50055CCDA /* NeDetailViewController.m */; };
 		00A5FF391AF8A1DF0055CCDA /* RoorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A5FF381AF8A1DF0055CCDA /* RoorViewController.m */; };
 		00A5FF551AF8B6EC0055CCDA /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00A5FF3D1AF8B6EC0055CCDA /* MJRefresh.bundle */; };
@@ -330,8 +329,6 @@
 		0060ABCB1AFD11A70037B02F /* FoodListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodListTableViewCell.m; sourceTree = "<group>"; };
 		0060ABCE1AFD21850037B02F /* FoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailViewController.h; sourceTree = "<group>"; };
 		0060ABCF1AFD21850037B02F /* FoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailViewController.m; sourceTree = "<group>"; };
-		00781D251B21F78A00A20362 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
-		00781D261B21F78A00A20362 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		00A5FF341AF89DF50055CCDA /* NeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeDetailViewController.h; sourceTree = "<group>"; };
 		00A5FF351AF89DF50055CCDA /* NeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeDetailViewController.m; sourceTree = "<group>"; };
 		00A5FF371AF8A1DF0055CCDA /* RoorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoorViewController.h; sourceTree = "<group>"; };
@@ -494,7 +491,6 @@
 				3FB0FEC61B2325EC00ED83B7 /* 关于我们 */,
 				3FB0FE981B22EF0300ED83B7 /* 自定义控制器 */,
 				3F094CFD1B22EE1A0037D3F4 /* 更多 */,
-				00781D241B21F78A00A20362 /* 左视图 */,
 				0034A6771AF74835003BF7E8 /* 我的 */,
 				0034A6221AF743B5003BF7E8 /* 食品 */,
 				0034A5DA1AF74397003BF7E8 /* 健康知识 */,
@@ -864,15 +860,6 @@
 				0060ABCF1AFD21850037B02F /* FoodDetailViewController.m */,
 			);
 			path = FoodDetail;
-			sourceTree = "<group>";
-		};
-		00781D241B21F78A00A20362 /* 左视图 */ = {
-			isa = PBXGroup;
-			children = (
-				00781D251B21F78A00A20362 /* LeftViewController.h */,
-				00781D261B21F78A00A20362 /* LeftViewController.m */,
-			);
-			path = "左视图";
 			sourceTree = "<group>";
 		};
 		00A5FF3C1AF8B6EC0055CCDA /* MJRefresh */ = {
@@ -1334,7 +1321,6 @@
 				00A5FF391AF8A1DF0055CCDA /* RoorViewController.m in Sources */,
 				004721A81AFA1D8700CC75FD /* MMProgressHUDOverlayView.m in Sources */,
 				0034A5481AF742EB003BF7E8 /* UIImageView+WebCache.m in Sources */,
-				00781D271B21F78A00A20362 /* LeftViewController.m in Sources */,
 				003466BC1AF73C6A003BF7E8 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				004721861AF9E07800CC75FD /* M80AttributedLabelAttachment.m in Sources */,
 			);
