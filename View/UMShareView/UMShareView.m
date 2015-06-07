@@ -14,7 +14,7 @@
 -(instancetype)initWithTitleWith:(NSString *) title delegate:(id) delegate;
 {
     if (self =[super init]) {
-        self.backgroundColor =[[UIColor blackColor] colorWithAlphaComponent:0.4];
+        self.backgroundColor =[[UIColor blackColor] colorWithAlphaComponent:0];
         self.frame=CGRectMake(0, 0, kDeviceWidth, kDeviceHeight);
         [self creatUI];
         _titleString=title;

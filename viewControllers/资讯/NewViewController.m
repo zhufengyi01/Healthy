@@ -42,6 +42,8 @@
 {
    [super viewWillAppear:YES];
    self.navigationController.toolbarHidden=YES;
+   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+
     /*self.navigationController.navigationBar.hidden=NO;
     self.tabBarController.tabBar.hidden=NO;
    
@@ -250,8 +252,8 @@
    [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
    
    // 设置文字
-   [self.tableView.footer setTitle:@"Click or drag up to refresh" forState:MJRefreshFooterStateIdle];
-   [self.tableView.footer setTitle:@"Loading more ..." forState:MJRefreshFooterStateRefreshing];
+   [self.tableView.footer setTitle:@"上拉刷新" forState:MJRefreshFooterStateIdle];
+   [self.tableView.footer setTitle:@"加载更多 ..." forState:MJRefreshFooterStateRefreshing];
    [self.tableView.footer setTitle:@"No more data" forState:MJRefreshFooterStateNoMoreData];
    
 //   // 设置字体
@@ -453,6 +455,7 @@
     NewTableViewCell  *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         cell =[[NewTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+       //cell.selectionStyle=UITableViewCellSelectionStyleBlue;
     }
    if (self.dataArray.count>indexPath.row) {
      cell.model =[self.dataArray objectAtIndex:indexPath.row];

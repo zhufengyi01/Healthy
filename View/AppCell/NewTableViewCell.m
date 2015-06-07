@@ -12,6 +12,7 @@
 #import "ZCControl.h"
 #import "Const.h"
 #import "NetApi.h"
+#import "Helper.h"
 @implementation NewTableViewCell
 
 - (void)awakeFromNib {
@@ -44,7 +45,7 @@
     countLabel.textColor=VGray_color;
     [self.contentView addSubview:countLabel];
     
-    timeLabel =[ZCControl createLabelWithFrame:CGRectMake(10,80,120, 20) Font:10 Text:@""];
+    timeLabel =[ZCControl createLabelWithFrame:CGRectMake(10,80,120, 20) Font:12 Text:@""];
     timeLabel.textColor=VGray_color;
     [self.contentView addSubview:timeLabel];
     
@@ -72,6 +73,8 @@
     countLabel.text=[NSString stringWithFormat:@"共浏览:%@",self.model.count];
     
     NSString *timeStr=self.model.time;
+    timeStr =[Helper dateFromDateSting:timeStr];
+    
     timeLabel.text=[NSString stringWithFormat:@"%@",timeStr];
     
 }
@@ -89,7 +92,7 @@
     
     countLabel.frame=CGRectMake(10, self.frame.size.height-20, 80, 20);
     tagLabel.frame=CGRectMake(10,self.frame.size.height-40, 40, 20);
-    timeLabel.frame=CGRectMake(countLabel.frame.origin.x+countLabel.frame.size.width, self.frame.size.height-20, 100, 20);
+    timeLabel.frame=CGRectMake(countLabel.frame.origin.x+countLabel.frame.size.width, self.frame.size.height-20, 140, 20);
     
     
 }

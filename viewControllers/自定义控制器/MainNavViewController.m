@@ -26,7 +26,7 @@
 
 + (void)initialize {
     UINavigationBar *navBar = [UINavigationBar appearance];
-    [navBar setBackgroundColor:VBlue_color];
+    //[navBar setBackgroundColor:VBlue_color];
     //[navBar setTranslucent:YES];
     [navBar setBarTintColor:VBlue_color];
     [navBar setTintColor:VBlue_color];
