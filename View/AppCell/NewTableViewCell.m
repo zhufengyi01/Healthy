@@ -48,7 +48,7 @@
     timeLabel.textColor=VGray_color;
     [self.contentView addSubview:timeLabel];
     
-    logoImageView =[[UIImageView alloc]initWithFrame:CGRectMake(kDeviceWidth-85,10, 80, 60)];
+    logoImageView =[[UIImageView alloc]initWithFrame:CGRectMake(kDeviceWidth-85,20, 80, 60)];
     logoImageView.layer.cornerRadius=4;
     logoImageView.clipsToBounds=YES;
     [self.contentView addSubview:logoImageView];

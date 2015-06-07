@@ -14,8 +14,9 @@
 #import "AFNetworking.h"
 #import "M80AttributedLabel.h"
 #import "Helper.h"
+#import "UMShareView.h"
 #import "MMProgressHUD.h"
-@interface NeDetailViewController ()
+@interface NeDetailViewController ()<UMShareViewDelegate>
 
 {
 
@@ -44,10 +45,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.toolbarHidden=NO;
     
     self.view.backgroundColor =View_BackGround;
     [self createNavagtion];
-    
+    [self configToolBar];
     [self requestNewDetail];
     //[self creatUI];
 }
@@ -58,6 +60,29 @@
     titleLable.font=[UIFont boldSystemFontOfSize:16];
     titleLable.textAlignment=NSTextAlignmentCenter;
   //  self.navigationItem.titleView=titleLable;
+}
+-(void)configToolBar
+{
+    
+    UIBarButtonItem  *leftitem =[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(dealToolBarItemClick:)];
+    leftitem.tag=100;
+    UIBarButtonItem  *space =[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                          target:nil action:nil];
+        UIBarButtonItem  *rightitem =[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(dealToolBarItemClick:)];
+    rightitem.tag=101;
+    
+    self.toolbarItems=@[leftitem,space,rightitem];
+}
+//点击下方工具栏
+-(void)dealToolBarItemClick:(UIBarButtonItem *)item
+{
+  if(item.tag==100)
+  {
+      //分享
+      UMShareView  *share =[[UMShareView alloc]initWithTitleWith:@"分享" delegate:self];
+      [share show];
+  }
+    
 }
 
 -(void)creatUI
@@ -88,7 +113,7 @@
 
     //s
     NSString  *timeString =[NSString stringWithFormat:@"共浏览:%@     时间:%@",self.model.count,self.model.time];
-    self.timeLable =[ZCControl createLabelWithFrame:CGRectMake(10, self.titleLable.frame.origin.y+self.titleLable.frame.size.height+10, kDeviceWidth-20, 15) Font:14 Text:timeString];
+    self.timeLable =[ZCControl createLabelWithFrame:CGRectMake(10, 30, kDeviceWidth-20, 15) Font:14 Text:timeString];
     self.timeLable.textColor=VGray_color;
     self.timeLable.textAlignment=NSTextAlignmentCenter;
     self.timeLable.font=[UIFont systemFontOfSize:12];
@@ -96,13 +121,17 @@
     
     //作者
     
-    self.autorLable =[ZCControl createLabelWithFrame:CGRectMake(10, self.timeLable.frame.origin.y+self.timeLable.frame.size.height+0, kDeviceWidth-20, 15) Font:14 Text:[NSString stringWithFormat:@"作者:%@",self.model.author]];
+    self.autorLable =[ZCControl createLabelWithFrame:CGRectMake(10,50, kDeviceWidth-20, 15) Font:14 Text:[NSString stringWithFormat:@"作者:%@",self.model.author]];
     self.autorLable.textColor=VGray_color;
     self.autorLable.textAlignment=NSTextAlignmentCenter;
     self.autorLable.font=[UIFont systemFontOfSize:12];
     [self.scrollView addSubview:self.autorLable];
 
     
+    
+    UIView  *line =[[UIView alloc]initWithFrame:CGRectMake(20, 70,kDeviceWidth-40, 0.5)];
+    line.backgroundColor =VLight_GrayColor;
+    [self.scrollView addSubview:line];
     
     ///内容
     self.contentLable =[[M80AttributedLabel alloc]initWithFrame:CGRectMake(10,self.autorLable.frame.origin.y+self.autorLable.frame.size.height+10,kDeviceWidth-20,100)];
@@ -120,9 +149,9 @@
     self.titleLable.textAlignment=NSTextAlignmentCenter;
 
     CGSize   Csize =[ContentString boundingRectWithSize:CGSizeMake(kDeviceWidth-30, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:[NSDictionary  dictionaryWithObject:self.contentLable.font  forKey:NSFontAttributeName] context:nil].size;
-    self.contentLable.frame=CGRectMake(15, self.timeLable.frame.origin.y+self.timeLable.frame.size.height+0, kDeviceWidth-30, Csize.height+10);
+    self.contentLable.frame=CGRectMake(15, 60, kDeviceWidth-30, Csize.height+10);
     
-    self.scrollView.contentSize=CGSizeMake(0, self.contentLable.frame.origin.y+self.contentLable.frame.size.height+100);
+    self.scrollView.contentSize=CGSizeMake(0, self.contentLable.frame.origin.y+self.contentLable.frame.size.height+50);
     
 }
 -(void)requestNewDetail
@@ -155,6 +184,12 @@
 }];
 }
 
+#pragma mark  UMShareViewDelegate-------
+-(void)UMShareViewClickIndex:(NSInteger)buttonIndex
+{
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

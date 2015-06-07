@@ -30,7 +30,9 @@
 @implementation FoodViewController
 -(void)viewWillAppear:(BOOL)animated
 {
-//    [super viewWillAppear:YES];
+    [super viewWillAppear:YES];
+    self.navigationController.toolbarHidden=YES;
+
 //    self.tabBarController.tabBar.hidden=NO;
 //    self.navigationController.navigationBar.hidden=NO;
 //    //细节1:混合色
@@ -133,7 +135,7 @@
 -(void)FoodListClick:(UIButton *) btn
 {
     FootListViewController  *list =[[FootListViewController alloc]init];
-    list.category_id=[NSString stringWithFormat:@"%ld",btn.tag-1000];
+    list.category_id=[NSString stringWithFormat:@"%d",btn.tag-1000];
     for (newModel *model in self.dataArray) {
         if ([model.Id isEqualToString:list.category_id]) {
             list.category_name=model.name;

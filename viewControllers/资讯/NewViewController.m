@@ -40,6 +40,8 @@
 @implementation NewViewController
 -(void)viewWillAppear:(BOOL)animated
 {
+   [super viewWillAppear:YES];
+   self.navigationController.toolbarHidden=YES;
     /*self.navigationController.navigationBar.hidden=NO;
     self.tabBarController.tabBar.hidden=NO;
    
