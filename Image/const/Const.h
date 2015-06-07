@@ -18,7 +18,7 @@
 
 
 //项目背景颜色
-#define View_BackGround [UIColor colorWithRed:231.0/255 green:231.0/255 blue:231.0/255 alpha:1]
+#define View_BackGround [UIColor colorWithRed:250.0/255 green:250.0/255 blue:250.0/255 alpha:1]
 #define VLight_GrayColor [UIColor colorWithRed:188.0/255 green:188.0/255 blue:188.0/255 alpha:1]
 //字体深灰色
 #define VGray_color      [UIColor colorWithRed:127.0/255 green:127.0/255 blue:139.0/255 alpha:1]
@@ -30,6 +30,7 @@
 #define kHeightNavigation 64
 #define kHeigthTabBar     49
 
+#define AppWindow  [[[UIApplication sharedApplication ] delegate] window]
 
 
 #endif

@@ -115,8 +115,8 @@
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     
     // 设置文字
-    [self.tableView.footer setTitle:@"Click or drag up to refresh" forState:MJRefreshFooterStateIdle];
-    [self.tableView.footer setTitle:@"Loading more ..." forState:MJRefreshFooterStateRefreshing];
+    [self.tableView.footer setTitle:@"上拉刷新" forState:MJRefreshFooterStateIdle];
+    [self.tableView.footer setTitle:@"加载更多 ..." forState:MJRefreshFooterStateRefreshing];
     [self.tableView.footer setTitle:@"No more data" forState:MJRefreshFooterStateNoMoreData];
     
     //   // 设置字体
@@ -211,7 +211,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return 80;
+        return 90;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

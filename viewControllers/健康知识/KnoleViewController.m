@@ -29,18 +29,20 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-//    self.navigationController.navigationBar.tintColor=VBlue_color;
-    self.tabBarController.tabBar.hidden=NO;
-    self.navigationController.navigationBar.hidden=NO;
-     //细节1:混合色
-    //细节2: 只有设置为透明后才会出现
-    self.navigationController.navigationBar.backgroundColor=VBlue_color;
-    //细节: 设置透明后视图会上移
-    [self.navigationController.navigationBar setTranslucent:YES];
-    [self.navigationController.navigationBar setBarTintColor:VBlue_color];
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.navigationController.toolbarHidden=YES;
+
+////    self.navigationController.navigationBar.tintColor=VBlue_color;
+//    self.tabBarController.tabBar.hidden=NO;
+//    self.navigationController.navigationBar.hidden=NO;
+//     //细节1:混合色
+//    //细节2: 只有设置为透明后才会出现
+//    self.navigationController.navigationBar.backgroundColor=VBlue_color;
+//    //细节: 设置透明后视图会上移
+//    [self.navigationController.navigationBar setTranslucent:YES];
+//    [self.navigationController.navigationBar setBarTintColor:VBlue_color];
+//    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
 
 
@@ -75,7 +77,7 @@
 {
     self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0,0,kDeviceWidth, kDeviceHeight-0)];
     self.tableView.delegate=self;
-    self.tableView.backgroundColor = View_BackGround;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.dataSource=self;
     //self.myTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
@@ -134,8 +136,8 @@
     [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     
     // 设置文字
-    [self.tableView.footer setTitle:@"Click or drag up to refresh" forState:MJRefreshFooterStateIdle];
-    [self.tableView.footer setTitle:@"Loading more ..." forState:MJRefreshFooterStateRefreshing];
+    [self.tableView.footer setTitle:@"上拉刷新" forState:MJRefreshFooterStateIdle];
+    [self.tableView.footer setTitle:@"加载更多 ..." forState:MJRefreshFooterStateRefreshing];
     [self.tableView.footer setTitle:@"No more data" forState:MJRefreshFooterStateNoMoreData];
     
     //   // 设置字体
@@ -232,9 +234,9 @@
     
      NSString  *imageString =model.img;
     if (imageString.length==0||!imageString) {
-        return 60;
+        return 80;
     }
-    return 80;
+    return 100;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

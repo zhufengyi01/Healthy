@@ -8,11 +8,11 @@
 
 #import "AppDelegate.h"
 #import "MMDrawerController.h"
-#import "LeftViewController.h"
 #import "MMDrawerVisualState.h"
 #import "NewViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"
-#import "CustmoTabBarController.h"
+#import "MainTabBarController.h"
+
 @interface AppDelegate ()
 @property (nonatomic,strong) MMDrawerController * drawerController;
 
@@ -24,7 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    self.window.rootViewController =[CustmoTabBarController new];
+    self.window.rootViewController =[MainTabBarController new];
 
 //
     return YES;

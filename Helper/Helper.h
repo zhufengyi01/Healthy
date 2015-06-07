@@ -15,4 +15,7 @@
 // 去掉网页附带的标签
 +(NSString *)filterHTML:(NSString *)html;
 
+//时间英文转化为中文
++(NSString *) dateFromDateSting:(NSString *) date;
+
 @end

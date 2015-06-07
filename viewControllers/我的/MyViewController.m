@@ -8,6 +8,9 @@
 
 #import "MyViewController.h"
 
+#import "ZCControl.h"
+
+#import "Const.h"
 @interface MyViewController ()
 
 @end
@@ -16,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor =View_BackGround;
     // Do any additional setup after loading the view.
 }
 

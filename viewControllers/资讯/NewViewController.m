@@ -12,21 +12,20 @@
 #import "NetApi.h"
 #import "AFNetworking.h"
 #import "newModel.h"
-#import "ADCircularMenuViewController.h"
 #import "NewTableViewCell.h"
 #import "NeDetailViewController.h"
 #import "MJRefresh.h"
-@interface NewViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,ADCircularMenuDelegate>
+#import "MyViewController.h"
+@interface NewViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 {
     int page;
     int pagesize;
    int Id;
    UISegmentedControl *segment;
    UISearchBar  *search;
-   ADCircularMenuViewController *circularMenuVC;
    UIImageView  *seachView;
-   UIButton *Searchbutton;
-   UIButton  *Menubtn;
+  // UIButton *Searchbutton;
+   //UIButton  *Menubtn;
 
    
 }
@@ -41,7 +40,11 @@
 @implementation NewViewController
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBar.hidden=NO;
+   [super viewWillAppear:YES];
+   self.navigationController.toolbarHidden=YES;
+   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+
+    /*self.navigationController.navigationBar.hidden=NO;
     self.tabBarController.tabBar.hidden=NO;
    
    //细节1:混合色
@@ -61,7 +64,7 @@
    //设置naviagtionbar的返回按钮颜色
    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-   
+   */
    
 }
 - (void)viewDidLoad {
@@ -86,11 +89,6 @@
 
 -(void)createNavagtion
 {
-//    UILabel  *titleLable=[ZCControl createLabelWithFrame:CGRectMake(0, 0, 100, 20) Font:16 Text:@"健康速递"];
-//    titleLable.textColor=VBlue_color;
-//    titleLable.font=[UIFont boldSystemFontOfSize:16];
-//    titleLable.textAlignment=NSTextAlignmentCenter;
-//    self.navigationItem.titleView=titleLable;
    
    NSArray *segmentedArray = [[NSArray alloc] initWithObjects:@"全部", @"热门", nil];
    segment = [[UISegmentedControl alloc] initWithItems:segmentedArray];
@@ -108,14 +106,12 @@
    
    [segment addTarget:self action:@selector(segmentClick:) forControlEvents:UIControlEventValueChanged];
    [self.navigationItem setTitleView:segment];
-
-//    Searchbutton =[ZCControl createButtonWithFrame:CGRectMake(0, 0,40,30) ImageName:nil Target:self Action:@selector(dealSearchShow:) Title:@"搜索"];
-//   [Searchbutton setTitleColor:VBlue_color forState:UIControlStateNormal];
-//   [Searchbutton setTitleColor:VGray_color forState:UIControlStateSelected];
-//   [Searchbutton setTitle:@"隐藏" forState:UIControlStateSelected];
-//   
-//   UIBarButtonItem  *item =[[UIBarButtonItem alloc]initWithCustomView:Searchbutton];
-//   self.navigationItem.rightBarButtonItem=item;
+  
+   self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"我的" style:UIBarButtonItemStylePlain target:self action:@selector(handMyClick)];
+}
+-(void)handMyClick
+{
+   [self.navigationController pushViewController:[MyViewController new] animated:YES];
 }
 -(void)segmentClick:(UISegmentedControl *)seg
 {
@@ -193,58 +189,11 @@
      pagesize=20;
      Id=1;
 }
-//-(void)createMenu
-//{
-//   
-//   Menubtn =[ZCControl createButtonWithFrame:CGRectMake(0,kDeviceHeight-kHeigthTabBar-kHeightNavigation, 40, 40) ImageName:nil Target:self Action:@selector(dealmenuClick) Title:@""];
-//   Menubtn.backgroundColor =[UIColor whiteColor];
-//   Menubtn.layer.cornerRadius=20;
-//   Menubtn.layer.borderColor=VBlue_color.CGColor;
-//   Menubtn.layer.borderWidth=3;
-//   Menubtn.clipsToBounds=YES;
-//   [Menubtn  setImage:[UIImage imageNamed:@"up_picture_blue"] forState:UIControlStateNormal];
-//   [self.view addSubview:Menubtn];
-//  
-//   
-//   //在标签上添加一个手势
-//   UIPanGestureRecognizer   *pan=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handelPan:)];
-//   [Menubtn addGestureRecognizer:pan];
-//}
--(void)handelPan:(UIPanGestureRecognizer *) pan
-{
-   CGPoint  point =[pan locationInView:self.view];
-   Menubtn.center=point;
-   
-   
-}
-//-(void)circularMenuClickedButtonAtIndex:(int)buttonIndex
-//{
-//   NSLog(@"======%d",buttonIndex);
-//   
-//}
-//
-//
-//-(void)dealmenuClick
-//{
-//   NSArray *arrImageName = [[NSArray alloc] initWithObjects:@"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png",
-//                            @"movie_tab_butten_press@2x.png", nil];
-//   
-//   circularMenuVC = [[ADCircularMenuViewController alloc] initWithMenuButtonImageNameArray:arrImageName andCornerButtonImageName:@"feed_tab_butten_press@2x.png"];
-//   circularMenuVC.delegateCircularMenu = self;
-//   [circularMenuVC show];
-//
-//}
-//
 -(void)createTableView
 {
     self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0,0,kDeviceWidth, kDeviceHeight-0)];
     self.tableView.delegate=self;
-    self.tableView.backgroundColor = View_BackGround;
+    self.tableView.backgroundColor =[UIColor whiteColor];
     self.tableView.dataSource=self;
     //self.myTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
@@ -303,8 +252,8 @@
    [self.tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
    
    // 设置文字
-   [self.tableView.footer setTitle:@"Click or drag up to refresh" forState:MJRefreshFooterStateIdle];
-   [self.tableView.footer setTitle:@"Loading more ..." forState:MJRefreshFooterStateRefreshing];
+   [self.tableView.footer setTitle:@"上拉刷新" forState:MJRefreshFooterStateIdle];
+   [self.tableView.footer setTitle:@"加载更多 ..." forState:MJRefreshFooterStateRefreshing];
    [self.tableView.footer setTitle:@"No more data" forState:MJRefreshFooterStateNoMoreData];
    
 //   // 设置字体
@@ -495,9 +444,9 @@
    }
    NSString  *imageString =model.img;
    if (imageString.length==0||!imageString) {
-      return 60;
+      return 80;
    }
-   return 80;
+   return 100;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -506,6 +455,7 @@
     NewTableViewCell  *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         cell =[[NewTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+       //cell.selectionStyle=UITableViewCellSelectionStyleBlue;
     }
    if (self.dataArray.count>indexPath.row) {
      cell.model =[self.dataArray objectAtIndex:indexPath.row];
@@ -561,14 +511,7 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
  
-   [search resignFirstResponder];
-   Searchbutton.selected=NO;
-   [UIView animateWithDuration:0.6 animations:^{
-      CGRect  Sframe = seachView.frame;
-      Sframe.origin.y=0;
-      seachView.frame=Sframe;
-   } completion:^(BOOL finished) {
-   }];
+ 
 
    
 }

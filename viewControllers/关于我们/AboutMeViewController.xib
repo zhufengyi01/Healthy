@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="OSQ-S8-abq" customClass="AboutMeViewController">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="Oup-qa-i4w"/>
+                <viewControllerLayoutGuide type="bottom" id="nZk-34-5Hd"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="05f-tZ-BGU">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6zA-kL-hua">
+                        <rect key="frame" x="200" y="28" width="200" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="3pL-BQ-1q6"/>
+                            <constraint firstAttribute="height" constant="200" id="ovV-3j-ieA"/>
+                        </constraints>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqy-f8-iPV">
+                        <rect key="frame" x="180" y="246" width="240" height="213"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">    健康快递，提供关于生活，饮食等各方面的健康知识。     本应用所有健康与医疗信息内容均来自互联网，不保证其准确性。请注意。
+
+
+
+</string>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="6zA-kL-hua" secondAttribute="centerX" id="J4E-eL-pUL"/>
+                    <constraint firstItem="6zA-kL-hua" firstAttribute="top" secondItem="Oup-qa-i4w" secondAttribute="bottom" constant="8" id="OvP-Ci-BTR"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="575" y="362"/>
+        </viewController>
+    </objects>
+</document>
