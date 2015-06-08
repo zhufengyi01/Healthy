@@ -11,7 +11,7 @@
 #import "SDImageCache.h"
 #import "MBProgressHUD+MJ.h"
 #import <MessageUI/MFMailComposeViewController.h>
-#import "AboutMeViewController.h"
+#import "AboutMeController.h"
 @interface MoreViewController () <MFMailComposeViewControllerDelegate>
 @property (nonatomic, strong) RETableViewManager *mgr;
 @end
@@ -159,9 +159,9 @@
     section.headerTitle = @"关于我们";
     __weak typeof (self) weakSelf = self;
     RETableViewItem *item = [RETableViewItem itemWithTitle:@"关于" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
-        //AboutMeViewController *aboutVC = [[AboutMeViewController alloc] initWithNibName:@"AboutMeViewController" bundle:nil];
-        //[weakSelf.navigationController pushViewController:aboutVC animated:YES];
-        [self.navigationController pushViewController:[AboutMeViewController new] animated:YES];
+        AboutMeController *aboutVC = [[AboutMeController alloc] init];
+        [weakSelf.navigationController pushViewController:aboutVC animated:YES];
+//        [self.navigationController pushViewController:[AboutMeViewController new] animated:YES];
     }];
     [section addItem:item];
     [self.mgr addSection:section];

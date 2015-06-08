@@ -1,22 +1,22 @@
 //
-//  AboutMeViewController.m
+//  AboutMeController.m
 //  测试使用侧边栏
 //
-//  Created by student on 15/6/6.
+//  Created by student on 15/6/7.
 //  Copyright (c) 2015年 风之翼. All rights reserved.
 //
 
-#import "AboutMeViewController.h"
+#import "AboutMeController.h"
 
-@interface AboutMeViewController ()
+@interface AboutMeController ()
 
 @end
 
-@implementation AboutMeViewController
+@implementation AboutMeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
